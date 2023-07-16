@@ -1,16 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProyectoCrud.AplicacionWeb.Models;
+using ProyectoCrud.BLL.Services;
 using System.Diagnostics;
 
 namespace ProyectoCrud.AplicacionWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IContactoService _contactoService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IContactoService contactoServ)
         {
-            _logger = logger;
+            _contactoService = contactoServ;
         }
 
         public IActionResult Index()
