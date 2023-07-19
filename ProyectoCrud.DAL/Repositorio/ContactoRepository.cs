@@ -27,6 +27,7 @@ namespace ProyectoCrud.DAL.Repositorio
         public async Task<bool> Eliminar(int id)
         {
             Contacto modelo = _dbContext.Contactos.First(c => c.IdContacto == id);
+            _dbContext.Contactos.Remove(modelo);
             await _dbContext.SaveChangesAsync();
             return true;
         }
